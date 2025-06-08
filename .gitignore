@@ -36,6 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
-cookies.json
+cookies-aliexpress.json
+cookies-popmart.json
 *.log
 .idea/
