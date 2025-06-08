@@ -8,7 +8,6 @@ import java.util.List;
 
 public class TelegramNotifier {
 
-    // 🛡️ Токен бота и chat_id'ы указаны напрямую
     private static final String BOT_TOKEN = System.getenv("TELEGRAM_BOT_TOKEN");
 
     private static final List<String> CHAT_IDS = List.of(

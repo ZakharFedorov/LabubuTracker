@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class PopmartChecker implements StockChecker {
 
-    private static final String PRODUCT_URL = "https://www.popmart.com/cz/products/938/the-monsters-exciting-macaron-vinyl-face-blind-box";
+    private static final String PRODUCT_URL = "https://www.popmart.com/en-CZ/products/527/THE-MONSTERS---Exciting-Macaron-Vinyl-Face-Blind-Box";
     private static final String COOKIES_PATH = "cookies-popmart.json";
 
     @Override
@@ -25,7 +25,7 @@ public class PopmartChecker implements StockChecker {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         try {
-            driver.get("https://www.popmart.com"); // сначала загрузим корневой домен
+            driver.get("https://www.popmart.com");
 
             File cookieFile = new File(COOKIES_PATH);
             if (cookieFile.exists()) {
@@ -38,11 +38,11 @@ public class PopmartChecker implements StockChecker {
                 driver.navigate().to(PRODUCT_URL);
             }
 
-            Thread.sleep(4000); // подождать загрузку страницы
+            Thread.sleep(4000);
 
             try {
                 WebElement unavailableElement = driver.findElement(
-                        By.xpath("//*[contains(text(), 'This item is not available in your region')]")
+                        By.xpath("//*[contains(text(), 'NOTIFY ME WHEN AVAILABLE')]")
                 );
 
                 System.out.println("\uD83D\uDD0D Класс варианта:" + unavailableElement.getAttribute("outerHTML"));

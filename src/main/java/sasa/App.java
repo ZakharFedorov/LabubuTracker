@@ -13,7 +13,7 @@ public class App {
 
         Timer timer = new Timer();
 
-        timer.schedule(new CheckTask(new AliExpressChecker()), 0, 10 * 60 * 1000);
-        timer.schedule(new CheckTask(new PopmartChecker()), 0, 10 * 60 * 1000);
+        timer.schedule(new CheckTask(new AliExpressChecker()), 0, 3 * 60 * 1000);
+        timer.schedule(new CheckTask(new PopmartChecker()), 0, 3 * 60 * 1000);
     }
 }

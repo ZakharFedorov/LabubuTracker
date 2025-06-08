@@ -38,7 +38,7 @@ public class AliExpressChecker implements StockChecker {
                 driver.navigate().to(PRODUCT_URL);
             }
 
-            Thread.sleep(4000); // подождать загрузку страницы
+            Thread.sleep(4000);
 
             String pageSource = driver.getPageSource().toLowerCase();
             String title = driver.getTitle().toLowerCase();
